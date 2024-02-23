@@ -1,4 +1,5 @@
 package src.com.backend.parcial.dao.impl;
+
 import src.com.backend.parcial.dao.IDao;
 
 import java.sql.*;
@@ -28,9 +29,9 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
             preparedStatement.setString(2, odontologo.getNombre());
             preparedStatement.setString(3, odontologo.getApellido());
 
-            connection.commit();
-
             preparedStatement.execute();
+
+            connection.commit();
 
             odontologoGuardado = new Odontologo(odontologo.getMatricula(), odontologo.getNombre(), odontologo.getApellido());
 
